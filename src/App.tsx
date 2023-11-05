@@ -6,9 +6,11 @@ import { Genre } from "./hooks/useGenres";
 import { useState } from "react";
 import PlatformSelector from "./components/PlatformSelector";
 import { Platform } from "./hooks/useGames";
+import SortSelector from "./components/SortSelector";
 export interface GameQuary {
   genre: Genre | null;
   platform: Platform | null;
+  sortOrder: string;
 }
 
 function App() {
@@ -37,6 +39,12 @@ function App() {
         </GridItem>
       </Show>
       <GridItem area="main" padding={5}>
+        <SortSelector
+          sortOrder={gameQuary.sortOrder}
+          onSortSelect={(sortOrder) =>
+            setGameQuary({ ...gameQuary, sortOrder })
+          }
+        />
         <PlatformSelector
           selectedPlatform={gameQuary.platform}
           onPlatformSelect={(platform) =>

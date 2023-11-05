@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { CanceledError } from "axios";
 
 const apiClient = axios.create({
   baseURL: "https://api.rawg.io/api",
@@ -6,5 +6,5 @@ const apiClient = axios.create({
     key: "4fe7ab98a539462ca2366c28092da003",
   },
 });
-
+export { CanceledError };
 export default apiClient;

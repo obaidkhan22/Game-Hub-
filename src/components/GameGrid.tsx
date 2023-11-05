@@ -1,21 +1,8 @@
-import { useEffect, useState } from "react";
-import apiClient from "../service/api-client";
-interface Game {
-  id: number;
-  name: string;
-}
+import useGames from "../hooks/useGames";
 
-interface RequestGameData {
-  count: number;
-  results: Game[];
-}
 const GameGrid = () => {
-  const [games, setGames] = useState<Game[]>([]);
-  useEffect(() => {
-    apiClient
-      .get<RequestGameData>("/games")
-      .then((res) => setGames(res.data.results));
-  });
+  const { games, error } = useGames();
+  if (error) return null;
   return (
     <ul>
       {games.map((game) => (

@@ -14,13 +14,13 @@ const GenresList = () => {
   const { data, error, isLoading } = useGenres();
   if (error) return null;
   return (
-    <List padding={5}>
+    <List marginX={4}>
       {isLoading && <Spinner></Spinner>}
       {data.map((genre) => (
-        <HStack key={genre.id} marginY={2}>
+        <HStack key={genre.id} marginY={3}>
           <Image
             boxSize={8}
-            borderRadius={10}
+            borderRadius={5}
             objectFit="cover"
             src={getCroppedImage(genre.image_background)}
           />

@@ -11,12 +11,12 @@ import useGenres from "../hooks/useGenres";
 import getCroppedImage from "../service/getCroppedImage";
 
 const GenresList = () => {
-  const { genres, error, isLoading } = useGenres();
+  const { data, error, isLoading } = useGenres();
   if (error) return null;
   return (
     <List padding={5}>
       {isLoading && <Spinner></Spinner>}
-      {genres.map((genre) => (
+      {data.map((genre) => (
         <HStack key={genre.id} marginY={2}>
           <Image
             boxSize={8}

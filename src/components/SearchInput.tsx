@@ -3,17 +3,19 @@ import { BsSearch } from "react-icons/bs";
 
 const SearchInput = () => {
   return (
-    <InputGroup>
-      <InputLeftElement>
-        <BsSearch />
-      </InputLeftElement>
-      <Input
-        type="text"
-        placeholder="Search games"
-        borderRadius={30}
-        variant="filled"
-      />
-    </InputGroup>
+    <form>
+      <InputGroup>
+        <InputLeftElement>
+          <BsSearch />
+        </InputLeftElement>
+        <Input
+          type="text"
+          placeholder="Search games"
+          borderRadius={30}
+          variant="filled"
+        />
+      </InputGroup>
+    </form>
   );
 };
 

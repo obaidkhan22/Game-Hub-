@@ -34,7 +34,7 @@ function App() {
           />
         </GridItem>
       </Show>
-      <GridItem area="main">
+      <GridItem area="main" padding={5}>
         <PlatformSelector
           selectedPlatform={selectedPlatform}
           onPlatformSelect={(platform) => setSelectedPlatform(platform)}

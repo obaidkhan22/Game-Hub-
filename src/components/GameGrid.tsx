@@ -9,13 +9,13 @@ interface Props {
 }
 const GameGrid = ({ selectedGenre, selectedPlatform }: Props) => {
   const { data, error, isLoading } = useGames(selectedGenre, selectedPlatform);
-  const skeletons = [1, 2, 3, 4, 5, 6];
+  const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   if (error) return null;
   return (
     <SimpleGrid
-      columns={{ sm: 1, md: 2, lg: 3, xl: 3 }}
-      spacing={5}
-      padding={5}
+      columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
+      spacing={3}
+      marginY={5}
     >
       {isLoading &&
         skeletons.map((skeleton) => <GameCardSkeleton key={skeleton} />)}

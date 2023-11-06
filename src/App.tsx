@@ -7,6 +7,7 @@ import { useState } from "react";
 import PlatformSelector from "./components/PlatformSelector";
 import { Platform } from "./hooks/useGames";
 import SortSelector from "./components/SortSelector";
+import GameHeading from "./components/GameHeading";
 export interface GameQuary {
   genre: Genre | null;
   platform: Platform | null;
@@ -44,6 +45,7 @@ function App() {
         </GridItem>
       </Show>
       <GridItem area="main" paddingX={5}>
+        <GameHeading gameQuary={gameQuary} />
         <HStack marginBottom={10} spacing={6} marginTop={2}>
           <SortSelector
             sortOrder={gameQuary.sortOrder}

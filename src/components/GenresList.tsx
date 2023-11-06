@@ -1,16 +1,18 @@
 import { HStack, List, Image, Button, Spinner } from "@chakra-ui/react";
 import useGenres, { Genre } from "../hooks/useGenres";
 import getCroppedImage from "../service/getCroppedImage";
+import genres from "../data/genres";
 interface Props {
   onGenreSelect: (genre: Genre) => void;
   selectedGenre: Genre | null;
 }
 const GenresList = ({ onGenreSelect, selectedGenre }: Props) => {
   const { data, error, isLoading } = useGenres();
+  console.log(data);
   if (error) return null;
+  if (isLoading) return <Spinner></Spinner>;
   return (
     <List marginX={4}>
-      {isLoading && <Spinner></Spinner>}
       {data.map((genre) => (
         <HStack key={genre.id} marginY={3}>
           <Image

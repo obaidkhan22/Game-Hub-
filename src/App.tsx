@@ -43,7 +43,7 @@ function App() {
           />
         </GridItem>
       </Show>
-      <GridItem area="main" paddingRight={5}>
+      <GridItem area="main" paddingX={5}>
         <HStack marginBottom={10} spacing={6} marginTop={2}>
           <SortSelector
             sortOrder={gameQuary.sortOrder}

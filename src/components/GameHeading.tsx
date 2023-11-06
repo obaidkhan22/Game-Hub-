@@ -9,11 +9,7 @@ const GameHeading = ({ gameQuary }: Props) => {
   const heading = `${gameQuary?.platform?.name || ""} ${
     gameQuary?.genre?.name || ""
   } Games`;
-  return (
-    <Heading fontSize="6xl" color={"gray.50"}>
-      {heading}
-    </Heading>
-  );
+  return <Heading fontSize="6xl">{heading}</Heading>;
 };
 
 export default GameHeading;

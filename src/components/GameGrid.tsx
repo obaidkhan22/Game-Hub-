@@ -19,7 +19,7 @@ const GameGrid = ({ gameQuary }: Props) => {
     >
       {isLoading &&
         skeletons.map((skeleton) => <GameCardSkeleton key={skeleton} />)}
-      {data.map((game) => (
+      {data?.results.map((game) => (
         <GridItem key={game.id}>
           <GameCard game={game} />
         </GridItem>

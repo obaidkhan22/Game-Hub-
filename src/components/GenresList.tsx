@@ -12,7 +12,7 @@ const GenresList = ({ onGenreSelect, selectedGenre }: Props) => {
   if (isLoading) return <Spinner></Spinner>;
   return (
     <List marginX={4}>
-      {data.map((genre) => (
+      {data?.results.map((genre) => (
         <HStack key={genre.id} marginY={3}>
           <Image
             boxSize={8}

@@ -2,7 +2,6 @@ import { GridItem, SimpleGrid } from "@chakra-ui/react";
 import useGames from "../hooks/useGames";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
-
 import { GameQuary } from "../App";
 interface Props {
   gameQuary: GameQuary;

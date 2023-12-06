@@ -9,7 +9,7 @@ interface Props {
 
 const GameHeading = ({ gameQuary }: Props) => {
   const genre = useGenre(gameQuary.genreId);
-  const platform = usePlatform(gameQuary.genreId);
+  const platform = usePlatform(gameQuary.platformId);
   const heading = `${platform?.name || ""} ${genre?.name || ""} Games`;
   return <Heading fontSize="6xl">{heading}</Heading>;
 };

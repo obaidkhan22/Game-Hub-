@@ -1,4 +1,10 @@
-import { Button, GridItem, SimpleGrid, Spinner } from "@chakra-ui/react";
+import {
+  Button,
+  GridItem,
+  HStack,
+  SimpleGrid,
+  Spinner,
+} from "@chakra-ui/react";
 import useGames from "../hooks/useGames";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
@@ -37,11 +43,13 @@ const GameGrid = ({ gameQuary }: Props) => {
           </React.Fragment>
         ))}
       </SimpleGrid>
-      {hasNextPage && (
-        <Button onClick={() => fetchNextPage()}>
-          {isFetchingNextPage ? "Loading..." : "Load More"}
-        </Button>
-      )}
+      <HStack justifyContent={"center"} marginBottom={5}>
+        {hasNextPage && (
+          <Button onClick={() => fetchNextPage()} paddingX={10}>
+            {isFetchingNextPage ? "Loading..." : "Load More"}
+          </Button>
+        )}
+      </HStack>
     </>
   );
 };

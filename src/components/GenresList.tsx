@@ -11,12 +11,15 @@ import getCroppedImage from "../service/getCroppedImage";
 
 interface Props {
   onGenreSelect: (genre: Genre) => void;
-  selectedGenre: Genre | null;
+  selectedGenreId?: number;
 }
-const GenresList = ({ onGenreSelect, selectedGenre }: Props) => {
+const GenresList = ({ onGenreSelect, selectedGenreId }: Props) => {
   const { data, error, isLoading } = useGenres();
   if (error) return null;
   if (isLoading) return <Spinner></Spinner>;
+
+  const { data: genres } = useGenres();
+  const g = genres?.results.find((g) => g.id === selectedGenreId);
   return (
     <List marginX={4}>
       <Heading fontSize={30} marginTop={3}>
@@ -31,7 +34,7 @@ const GenresList = ({ onGenreSelect, selectedGenre }: Props) => {
             src={getCroppedImage(genre.image_background)}
           />
           <Button
-            fontWeight={selectedGenre?.id === genre.id ? "bold" : "normal"}
+            fontWeight={g?.id === genre.id ? "bold" : "normal"}
             whiteSpace="normal"
             textAlign="left"
             fontSize="18px"

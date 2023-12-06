@@ -1,10 +1,4 @@
-import {
-  Button,
-  GridItem,
-  HStack,
-  SimpleGrid,
-  Spinner,
-} from "@chakra-ui/react";
+import { Button, GridItem, HStack, SimpleGrid } from "@chakra-ui/react";
 import useGames from "../hooks/useGames";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";

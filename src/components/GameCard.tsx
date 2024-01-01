@@ -4,6 +4,7 @@ import getCroppedImage from "../service/getCroppedImage";
 import PlatFormIcons from "./PlatFormIcons";
 import CriticScore from "./CriticScore";
 import Emoji from "./Emoji";
+import { Link } from "react-router-dom";
 
 interface Props {
   game: Game;
@@ -11,7 +12,15 @@ interface Props {
 
 const GameCard = ({ game }: Props) => {
   return (
-    <Card borderRadius="20px" overflow="hidden" marginBottom={4}>
+    <Card
+      _hover={{
+        transform: "scale(1.05)",
+        transition: "transform .15s ease-in",
+      }}
+      borderRadius="20px"
+      overflow="hidden"
+      marginBottom={4}
+    >
       <Image src={getCroppedImage(game.background_image)} />
       <CardBody>
         <HStack justifyContent="space-between" marginY={2}>
@@ -21,7 +30,7 @@ const GameCard = ({ game }: Props) => {
           <CriticScore score={game.metacritic} />
         </HStack>
         <Heading fontSize="2xl">
-          {game.name}
+          <Link to={`games/${game.name}`}>{game.name}</Link>
           <Emoji rating={game.rating_top} />
         </Heading>
       </CardBody>

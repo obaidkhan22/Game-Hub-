@@ -1,13 +1,10 @@
 import { Button, GridItem, HStack, SimpleGrid } from "@chakra-ui/react";
+import React from "react";
 import useGames from "../hooks/useGames";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
-import { GameQuary } from "../App";
-import React from "react";
-interface Props {
-  gameQuary: GameQuary;
-}
-const GameGrid = ({ gameQuary }: Props) => {
+
+const GameGrid = () => {
   const {
     data,
     error,
@@ -15,7 +12,7 @@ const GameGrid = ({ gameQuary }: Props) => {
     hasNextPage,
     fetchNextPage,
     isFetchingNextPage,
-  } = useGames(gameQuary);
+  } = useGames();
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   if (error) return null;
   return (
